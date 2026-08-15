@@ -83,6 +83,51 @@ Você provavelmente usará Nginx se:
 
 Em resumo, o **Nginx é uma das peças fundamentais da infraestrutura web moderna**, atuando como intermediário entre os usuários e as aplicações para fornecer desempenho, segurança e escalabilidade.
 
+## Estrutura
+
+```bash
+tree
+.
+├── README.md
+├── docker
+│   ├── proxy
+│   │   ├── app
+│   │   │   ├── Dockerfile
+│   │   │   ├── package.json
+│   │   │   └── server.js
+│   │   ├── docker-compose.yml
+│   │   ├── nginx
+│   │   │   └── nginx.conf
+│   │   └── proxy.md
+│   └── site
+│       ├── http
+│       │   ├── docker-compose.yml
+│       │   ├── logs.md
+│       │   ├── site
+│       │   │   ├── index.html
+│       │   │   ├── logo.png
+│       │   │   ├── script.js
+│       │   │   └── style.css
+│       │   └── site.md
+│       └── https
+│           ├── certs
+│           │   ├── site.crt
+│           │   └── site.key
+│           ├── docker-compose.yml
+│           ├── https.md
+│           ├── nginx
+│           │   └── default.conf
+│           └── site
+│               ├── index.html
+│               ├── logo.png
+│               ├── script.js
+│               └── style.css
+└── k6
+    └── script.js
+```
+
 ## Utilização
 
-- [Docker]()
+- [Subindo um site com NGINX](./docker/site/http/site.md)
+- [Subindo um projeto com Node.js e proxy reverso](./docker/proxy/proxy.md)
+- [script de teste](./k6/script.js)
