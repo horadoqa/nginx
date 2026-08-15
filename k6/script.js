@@ -12,7 +12,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get('https://serratec.org/');
+  const res = http.get('http://localhost');
 
   check(res, {
     'status é 200': (r) => r.status === 200,
