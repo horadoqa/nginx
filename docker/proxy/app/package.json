@@ -1,0 +1,9 @@
+{
+  "name": "proxy-app",
+  "version": "1.0.0",
+  "description": "Aplicação Node.js atrás de Nginx",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

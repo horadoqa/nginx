@@ -135,16 +135,33 @@ E um `server.js` simples:
 const http = require("http");
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Olá! Node.js está funcionando através do Nginx!");
+    res.writeHead(200, {
+        "Content-Type": "text/plain; charset=utf-8"
+    });
+    res.end("Olá! Node.js está funcionando através do Nginx!");
 });
 
 server.listen(3000, "0.0.0.0", () => {
-  console.log("Servidor rodando na porta 3000");
+    console.log("Servidor rodando na porta 3000");
 });
 ```
 
 O `0.0.0.0` é importante no Docker: permite que a aplicação aceite conexões vindas de fora do próprio processo/container.
+
+O `package.json`
+
+```json
+{
+  "name": "proxy-app",
+  "version": "1.0.0",
+  "description": "Aplicação Node.js atrás de Nginx",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
+```
+
 
 ## 5. Subir tudo
 
